@@ -15,21 +15,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var buttonLinea = findViewById<Button>(R.id.buttonEntrar)
-        var Nombre = findViewById<EditText>(R.id.ButtonName)
-
-        buttonLinea.setOnClickListener {
-            database = Firebase.database.reference
-            var id = ""
-            for(i in 1..5){
-                var numero = (0..10).random()
-                id += numero
-            }
-            val user = Usuario(Nombre.toString(),id.toInt(),"00-00--")
-
-            database.child("Jugador").setValue(user)
-
-        }
+//        var buttonLinea = findViewById<Button>(R.id.buttonEntrar)
+//        var Nombre = findViewById<EditText>(R.id.ButtonName)
+//
+//        buttonLinea.setOnClickListener {
+//            database = Firebase.database.reference
+//            var id = ""
+//            for(i in 1..5){
+//                var numero = (0..10).random()
+//                id += numero
+//            }
+//            val user = Usuario(Nombre.toString(),id.toInt(),"00-00--")
+//
+//            database.child("Jugador").setValue(user)
+//
+//        }
 
     }
 
