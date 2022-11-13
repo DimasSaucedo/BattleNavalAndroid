@@ -28,15 +28,16 @@
         app:srcCompat="@drawable/agua" />
 
     <ScrollView
-        android:layout_width="359dp"
-        android:layout_height="402dp"
+        android:layout_width="356dp"
+        android:layout_height="442dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="204dp"
+        android:layout_marginBottom="144dp"
         android:background="#FFFFFF"
         android:contentDescription="@android:string/ok"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
@@ -47,15 +48,16 @@
 
     <Button
         android:id="@+id/iniBatalla"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="44dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginBottom="44dp"
-        android:backgroundTint="#FFFFFF"
-        android:text="Iniciar Batalla"
+        android:backgroundTint="#ED7D31"
+        android:foreground="@drawable/btndisena"
         android:textAlignment="center"
-        android:textColor="#D50000"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

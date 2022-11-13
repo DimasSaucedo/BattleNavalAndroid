@@ -40,7 +40,7 @@
         android:id="@+id/btn_Iniciar"
         android:layout_width="163dp"
         android:layout_height="144dp"
-        android:layout_marginBottom="228dp"
+        android:layout_marginBottom="212dp"
         android:backgroundTint="#00FFFFFF"
         android:foreground="@drawable/iniciar"
         android:gravity="center"
@@ -51,18 +51,16 @@
         app:iconSize="56dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.883"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="325dp"
         android:layout_height="155dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/titulo"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
