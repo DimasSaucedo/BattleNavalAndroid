@@ -1,5 +1,6 @@
 package com.example.battleship
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -14,6 +15,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val btnIniciar: Button= findViewById(R.id.btn_Iniciar)
+        val btnAjustes: Button= findViewById(R.id.btn_ajustes)
+        val btnLogin: Button= findViewById(R.id.btn_login)
 
 //        var buttonLinea = findViewById<Button>(R.id.buttonEntrar)
 //        var Nombre = findViewById<EditText>(R.id.ButtonName)
@@ -30,6 +35,19 @@ class MainActivity : AppCompatActivity() {
 //            database.child("Jugador").setValue(user)
 //
 //        }
+
+        btnIniciar.setOnClickListener{
+            val intent: Intent = Intent(this,modo_juego::class.java)
+            startActivity(intent)
+        }
+        btnAjustes.setOnClickListener{
+            val intent: Intent = Intent(this,ajustes::class.java)
+            startActivity(intent)
+        }
+        btnLogin.setOnClickListener{
+            val intent: Intent = Intent(this,iniciar_sesion::class.java)
+            startActivity(intent)
+        }
 
     }
 
