@@ -109,14 +109,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btn_cuentaMJ"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#ED7D31"
-        android:foreground="@drawable/login"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="621dp" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

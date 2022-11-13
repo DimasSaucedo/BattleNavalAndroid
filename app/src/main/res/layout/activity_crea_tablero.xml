@@ -10,9 +10,9 @@
         android:id="@+id/horizontalScrollView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="34dp"
         android:layout_marginTop="120dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="34dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -100,23 +100,22 @@
         android:id="@+id/btnBorrar"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginEnd="72dp"
         android:layout_marginBottom="56dp"
         android:backgroundTint="#ed7d31"
         android:foreground="@drawable/reset"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/btnNext" />
 
     <Button
         android:id="@+id/btnNext"
         android:layout_width="169dp"
         android:layout_height="93dp"
-        android:layout_marginEnd="32dp"
         android:layout_marginBottom="56dp"
         android:backgroundTint="#ed7d31"
         android:foreground="@drawable/iniBatalla"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        tools:layout_editor_absoluteX="210dp" />
 
     <TextView
         android:id="@+id/textView17"

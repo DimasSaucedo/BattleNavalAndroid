@@ -11,7 +11,6 @@ class modo_juego : AppCompatActivity() {
         setContentView(R.layout.activity_modo_juego)
 
         val btnBack:Button= findViewById(R.id.back)
-        val btnLogin:Button= findViewById(R.id.btn_cuentaMJ)
         val btn2p:Button= findViewById(R.id.dosJugadores)
         val btn1p:Button= findViewById(R.id.unJugador)
 
@@ -19,10 +18,7 @@ class modo_juego : AppCompatActivity() {
             val intent: Intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         }
-        btnLogin.setOnClickListener{
-            val intent: Intent = Intent(this,iniciar_sesion::class.java)
-            startActivity(intent)
-        }
+
         btn2p.setOnClickListener{
             val intent: Intent = Intent(this,jugadoresLista::class.java)
             startActivity(intent)

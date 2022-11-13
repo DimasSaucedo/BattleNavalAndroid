@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
 
         val btnIniciar: Button= findViewById(R.id.btn_Iniciar)
         val btnAjustes: Button= findViewById(R.id.btn_ajustes)
-        val btnLogin: Button= findViewById(R.id.btn_login)
 
 //        var buttonLinea = findViewById<Button>(R.id.buttonEntrar)
 //        var Nombre = findViewById<EditText>(R.id.ButtonName)
@@ -37,20 +36,12 @@ class MainActivity : AppCompatActivity() {
 //        }
 
         btnIniciar.setOnClickListener{
-            val intent: Intent = Intent(this,modo_juego::class.java)
+            val intent: Intent = Intent(this,iniciar_sesion::class.java)
             startActivity(intent)
         }
         btnAjustes.setOnClickListener{
             val intent: Intent = Intent(this,ajustes::class.java)
             startActivity(intent)
         }
-        btnLogin.setOnClickListener{
-            val intent: Intent = Intent(this,iniciar_sesion::class.java)
-            startActivity(intent)
-        }
-
     }
-
-
-
 }
