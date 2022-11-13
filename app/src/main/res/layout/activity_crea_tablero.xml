@@ -9,22 +9,55 @@
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
         android:layout_width="409dp"
-        android:layout_height="81dp"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="60dp">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" >
+            android:orientation="horizontal">
 
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
         </LinearLayout>
     </HorizontalScrollView>
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="381dp"
-        android:layout_height="590dp"
+        android:layout_height="420dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,32 +66,46 @@
         app:srcCompat="@drawable/tablero" />
 
     <Button
-        android:id="@+id/btn_perfil"
+        android:id="@+id/btnHome"
         android:layout_width="wrap_content"
         android:layout_height="56dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="56dp"
         android:backgroundTint="#FFFFFF"
-        android:text="perfil"
+        android:text="Inicio"
         android:textColor="#D50000"
         android:textSize="12sp"
-        tools:layout_editor_absoluteX="66dp"
-        tools:layout_editor_absoluteY="610dp" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="56dp"
-        android:backgroundTint="#FFFFFF"
-        android:text="home"
-        android:textColor="#D50000"
-        tools:layout_editor_absoluteX="299dp"
-        tools:layout_editor_absoluteY="610dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="268dp"
         android:layout_height="132dp"
         app:srcCompat="@drawable/barquito"
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="560dp" />
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="583dp" />
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="56dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="Seguir"
+        android:textColor="#D50000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/tit_disenio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
