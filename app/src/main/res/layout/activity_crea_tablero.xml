@@ -77,9 +77,18 @@
     </HorizontalScrollView>
 
     <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="310dp"
+        android:layout_height="408dp"
+        app:srcCompat="@drawable/timon"
+        tools:layout_editor_absoluteX="210dp"
+        tools:layout_editor_absoluteY="514dp" />
+
+    <ImageView
         android:id="@+id/imageView5"
         android:layout_width="381dp"
         android:layout_height="420dp"
+        android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,35 +97,24 @@
         app:srcCompat="@drawable/tablero" />
 
     <Button
-        android:id="@+id/btnHome"
-        android:layout_width="wrap_content"
-        android:layout_height="56dp"
+        android:id="@+id/btnBorrar"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginBottom="56dp"
-        android:backgroundTint="#FFFFFF"
-        android:text="Inicio"
-        android:textColor="#D50000"
-        android:textSize="12sp"
+        android:backgroundTint="#ed7d31"
+        android:foreground="@drawable/reset"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="268dp"
-        android:layout_height="132dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/barquito" />
-
     <Button
         android:id="@+id/btnNext"
-        android:layout_width="wrap_content"
-        android:layout_height="56dp"
-        android:layout_marginEnd="40dp"
+        android:layout_width="169dp"
+        android:layout_height="93dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="56dp"
-        android:backgroundTint="#FFFFFF"
-        android:text="Seguir"
-        android:textColor="#D50000"
+        android:backgroundTint="#ed7d31"
+        android:foreground="@drawable/iniBatalla"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
