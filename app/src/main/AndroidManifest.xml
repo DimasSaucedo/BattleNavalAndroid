@@ -16,6 +16,15 @@
         android:theme="@style/Theme.BattleShip"
         tools:targetApi="31">
         <activity
+            android:name=".perdida"
+            android:exported="false" />
+        <activity
+            android:name=".victoria"
+            android:exported="false" />
+        <activity
+            android:name=".ajustes"
+            android:exported="false" />
+        <activity
             android:name=".registro"
             android:exported="true" />
         <activity
