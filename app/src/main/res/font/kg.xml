@@ -3,5 +3,5 @@
     <font
         android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/sketchg" />
+        android:font="@font/kg_primary_Italics" />
 </font-family>

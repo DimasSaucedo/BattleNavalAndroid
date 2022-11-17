@@ -80,9 +80,11 @@
         android:id="@+id/imageView6"
         android:layout_width="310dp"
         android:layout_height="408dp"
-        app:srcCompat="@drawable/timon"
-        tools:layout_editor_absoluteX="210dp"
-        tools:layout_editor_absoluteY="514dp" />
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="488dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/timon" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -105,7 +107,8 @@
         android:backgroundTint="#ed7d31"
         android:foreground="@drawable/reset"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnNext" />
+        app:layout_constraintEnd_toStartOf="@+id/btnNext"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/btnNext"
@@ -113,8 +116,9 @@
         android:layout_height="93dp"
         android:layout_marginBottom="56dp"
         android:backgroundTint="#ed7d31"
-        android:foreground="@drawable/iniBatalla"
+        android:foreground="@drawable/iniciarbatalla"
         app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
         tools:layout_editor_absoluteX="210dp" />
 
     <TextView
