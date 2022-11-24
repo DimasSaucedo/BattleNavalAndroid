@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Dimas/AndroidStudioProjects/BattleNavalAndroid/app/src/main/res/font/kg.xml" value="0.1" />
+        <entry key="..\:/Users/Dimas/AndroidStudioProjects/BattleNavalAndroid/app/src/main/res/layout/activity_crea_tablero.xml" value="0.22" />
+        <entry key="..\:/Users/Dimas/AndroidStudioProjects/BattleNavalAndroid/app/src/main/res/layout/activity_registro.xml" value="0.1" />
         <entry key="..\:/Users/Dimas/AndroidStudioProjects/BattleShip/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/JSK/Documents/battleNaval/app/src/main/res/font/kg.xml" value="0.1" />
         <entry key="..\:/Users/JSK/Documents/battleNaval/app/src/main/res/font/sketch.xml" value="0.23020833333333332" />

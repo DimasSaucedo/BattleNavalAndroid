@@ -135,7 +135,7 @@
                         android:id="@+id/textView9"
                         android:layout_width="50dp"
                         android:layout_height="60dp"
-                        android:background="@drawable/modoCla"
+                        android:background="@drawable/modocla"
                         android:fontFamily="monospace"
                         android:gravity="center"
                         android:textAlignment="center"
