@@ -33,11 +33,11 @@ GestureDetector.OnDoubleTapListener{
 
     //Pociciones pa los barcos
     var objbarcoArray = arrayOf<ObjectDrag>(
-        ObjectDrag(this.context,40f,202f, R.drawable.b1,1),
-        ObjectDrag(this.context,200f,202f, R.drawable.b2,2),
-        ObjectDrag(this.context,500f,202f, R.drawable.b3,3),
-        ObjectDrag(this.context,40f,306f, R.drawable.b4,4),
-        ObjectDrag(this.context,500f,306f, R.drawable.b5,5))
+        ObjectDrag(this.context,40f,202f, R.drawable.barc1,1),
+        ObjectDrag(this.context,200f,202f, R.drawable.barc2,2),
+        ObjectDrag(this.context,500f,202f, R.drawable.barc3,3),
+        ObjectDrag(this.context,40f,306f, R.drawable.barc4,4),
+        ObjectDrag(this.context,500f,306f, R.drawable.barc5,5))
 
     init{
         mDetector = GestureDetectorCompat(this.context,this)
