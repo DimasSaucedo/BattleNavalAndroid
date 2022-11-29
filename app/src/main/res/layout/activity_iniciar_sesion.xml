@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".iniciar_sesion">
 
     <ImageView
@@ -29,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/usuarioNom"
+        android:id="@+id/usuIngreso"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -46,7 +47,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/pwdIngreso"
         android:layout_width="0dp"
         android:layout_height="53dp"
         android:layout_marginStart="50dp"
@@ -59,7 +60,7 @@
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usuarioNom" />
+        app:layout_constraintTop_toBottomOf="@+id/usuIngreso" />
 
     <Button
         android:id="@+id/btnLog"
@@ -70,9 +71,10 @@
         android:layout_marginEnd="60dp"
         android:backgroundTint="#ed7d31"
         android:foreground="@drawable/login"
+        android:onClick="leerUser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/pwdIngreso" />
 
     <TextView
         android:id="@+id/textView7"
@@ -85,7 +87,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnLog" />
 
     <Button
-        android:id="@+id/btnRegistro"
+        android:id="@+id/btnRegistrate"
         android:layout_width="167dp"
         android:layout_height="45dp"
         android:layout_marginTop="8dp"
