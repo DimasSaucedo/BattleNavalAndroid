@@ -7,7 +7,7 @@ class DBContract {
         companion object {
             val TABLE_NAME = "jugadores"
             val COLUMN_NAME = "name"
-            val COLUMN_PWD = "passw"
+            val COLUMN_PWD = "pass"
             val COLUMN_AGE = "age"
         }
     }

@@ -108,32 +108,32 @@ class UserDBHelper (context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
     }
 
     @SuppressLint("Range")
-    fun readAllUsers(): ArrayList<UserModel> {
-        val users = ArrayList<UserModel>()
-        val db = writableDatabase
-        var cursor: Cursor? = null
-        try {
-            cursor = db.rawQuery("select * from " + DBContract.UserEntry.TABLE_NAME, null)
-        } catch (e: SQLiteException) {
-            db.execSQL(SQL_CREATE_ENTRIES)
-            return ArrayList()
-        }
-
-        var name: String
-        var pass: String
-        var age: String
-        if (cursor!!.moveToFirst()) {
-            while (cursor.isAfterLast == false) {
-                name = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_NAME))
-                pass = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_PWD))
-                age = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_AGE))
-
-                users.add(UserModel(name,pass,age))
-                cursor.moveToNext()
-            }
-        }
-        return users
-    }
+//    fun readAllUsers(): ArrayList<UserModel> {
+//        val users = ArrayList<UserModel>()
+//        val db = writableDatabase
+//        var cursor: Cursor? = null
+//        try {
+//            cursor = db.rawQuery("select * from " + DBContract.UserEntry.TABLE_NAME, null)
+//        } catch (e: SQLiteException) {
+//            db.execSQL(SQL_CREATE_ENTRIES)
+//            return ArrayList()
+//        }
+//
+//        var name: String
+//        var pass: String
+//        var age: String
+//        if (cursor!!.moveToFirst()) {
+//            while (cursor.isAfterLast == false) {
+//                name = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_NAME))
+//                pass = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_PWD))
+//                age = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_AGE))
+//
+//                users.add(UserModel(name,pass,age))
+//                cursor.moveToNext()
+//            }
+//        }
+//        return users
+//    }
 
     fun buscar(name: String): Boolean {
 
