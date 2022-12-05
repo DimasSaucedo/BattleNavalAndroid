@@ -15,5 +15,11 @@ class crea_tablero : AppCompatActivity() {
 //        setContentView(canvas)
         setContentView(R.layout.activity_crea_tablero)
 
+        var button  = findViewById<Button>(R.id.btnNext)
+
+        button.setOnClickListener {
+            var tablero_enemigo = Intent (this,Tablero_enemigo::class.java)
+            startActivity(tablero_enemigo)
+        }
     }
 }

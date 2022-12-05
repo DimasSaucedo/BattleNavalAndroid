@@ -156,7 +156,7 @@ GestureDetector.OnDoubleTapListener{
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         val ancho = 1080
-        val alto = 2257
+        val alto = 1700
 
         setMeasuredDimension(ancho,alto)
     }
