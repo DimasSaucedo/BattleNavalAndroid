@@ -1,4 +1,4 @@
 package bds.posicion
 
-class PosPuntos {
+class PosPuntos(var Punto:String) {
 }

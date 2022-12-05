@@ -59,4 +59,34 @@ class DBContractPos {
             val COLUMN_PUNJUG = "punjug"
         }
     }
+
+    class puntosJug: BaseColumns{
+        companion object{
+            val TABLE_NAME = "puntosJug"
+            val COLUMN_PUNTO = "puntoJ"
+        }
+    }
+
+    class puntosCon: BaseColumns{
+        companion object{
+            val TABLE_NAME = "puntosCon"
+            val COLUMN_PUNTO = "puntoC"
+        }
+    }
+
+    class toqueJugador: BaseColumns{
+        companion object{
+            val TABLE_NAME = "ToquesJug"
+            val COLUMN_TOQUEX = "toqueX"
+            val COLUMN_TOQUEY = "toqueY"
+        }
+    }
+
+    class toqueConsola: BaseColumns{
+        companion object{
+            val TABLE_NAME = "ToquesCon"
+            val COLUMN_TOQUEX = "toqueX"
+            val COLUMN_TOQUEY = "toqueY"
+        }
+    }
 }

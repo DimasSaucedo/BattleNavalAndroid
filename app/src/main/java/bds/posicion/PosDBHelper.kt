@@ -73,6 +73,36 @@ null,DATABASE_VERSION) {
                         DBContractPos.PosBarco5.COLUMN_PUNCON + " TEXT)"
             )
         )
+
+        db.execSQL(
+            String.format(
+                "CREATE TABLE " + DBContractPos.puntosJug.TABLE_NAME + "(" +
+                        DBContractPos.puntosJug.COLUMN_PUNTO + " TEXT)"
+            )
+        )
+
+        db.execSQL(
+            String.format(
+                "CREATE TABLE " + DBContractPos.puntosCon.TABLE_NAME + "(" +
+                        DBContractPos.puntosCon.COLUMN_PUNTO + " TEXT)"
+            )
+        )
+
+        db.execSQL(
+            String.format(
+                "CREATE TABLE " + DBContractPos.toqueJugador.TABLE_NAME + "(" +
+                        DBContractPos.toqueJugador.COLUMN_TOQUEX + " TEXT," +
+                        DBContractPos.toqueJugador.COLUMN_TOQUEY + " TEXT)"
+            )
+        )
+
+        db.execSQL(
+            String.format(
+                "CREATE TABLE " + DBContractPos.toqueConsola.TABLE_NAME + "(" +
+                        DBContractPos.toqueConsola.COLUMN_TOQUEX + " TEXT," +
+                        DBContractPos.toqueConsola.COLUMN_TOQUEY + " TEXT)"
+            )
+        )
     }
 
     override fun onUpgrade(db: SQLiteDatabase, p1: Int, p2: Int) {
@@ -81,8 +111,106 @@ null,DATABASE_VERSION) {
         db.execSQL(String.format("DROP TABLE IF EXISTS " + DBContractPos.PosBarco3.TABLE_NAME + ""))
         db.execSQL(String.format("DROP TABLE IF EXISTS " + DBContractPos.PosBarco4.TABLE_NAME + ""))
         db.execSQL(String.format("DROP TABLE IF EXISTS " + DBContractPos.PosBarco5.TABLE_NAME + ""))
+        db.execSQL(String.format("DROP TABLE IF EXISTS " + DBContractPos.puntosCon.TABLE_NAME + ""))
+        db.execSQL(String.format("DROP TABLE IF EXISTS " + DBContractPos.puntosJug.TABLE_NAME + ""))
+        db.execSQL(String.format("DROP TABLE IF EXISTS " + DBContractPos.toqueConsola.TABLE_NAME + ""))
+        db.execSQL(String.format("DROP TABLE IF EXISTS " + DBContractPos.toqueJugador.TABLE_NAME + ""))
         onCreate(db)
+    }
 
+    fun crearTablas(){
+        val db = writableDatabase
+        db.execSQL(
+            String.format(
+                "CREATE TABLE " + DBContractPos.PosBarco1.TABLE_NAME + "(" +
+                        DBContractPos.PosBarco1.COLUMN_JUGX + " TEXT," +
+                        DBContractPos.PosBarco1.COLUMN_JUGY + " TEXT," +
+                        DBContractPos.PosBarco1.COLUMN_PUNJUG + " TEXT," +
+                        DBContractPos.PosBarco1.COLUMN_CONX + " TEXT," +
+                        DBContractPos.PosBarco1.COLUMN_CONY + " TEXT," +
+                        DBContractPos.PosBarco1.COLUMN_PUNCON + " TEXT)"
+            )
+        )
+        db.execSQL(
+            String.format(
+                "CREATE TABLE " + DBContractPos.PosBarco2.TABLE_NAME + "(" +
+                        DBContractPos.PosBarco2.COLUMN_JUGX + " TEXT," +
+                        DBContractPos.PosBarco2.COLUMN_JUGY + " TEXT," +
+                        DBContractPos.PosBarco2.COLUMN_PUNJUG + " TEXT," +
+                        DBContractPos.PosBarco2.COLUMN_CONX + " TEXT," +
+                        DBContractPos.PosBarco2.COLUMN_CONY + " TEXT," +
+                        DBContractPos.PosBarco2.COLUMN_PUNCON + " TEXT)"
+            )
+        )
+        db.execSQL(
+            String.format(
+                "CREATE TABLE " + DBContractPos.PosBarco3.TABLE_NAME + "(" +
+                        DBContractPos.PosBarco3.COLUMN_JUGX + " TEXT," +
+                        DBContractPos.PosBarco3.COLUMN_JUGY + " TEXT," +
+                        DBContractPos.PosBarco3.COLUMN_PUNJUG + " TEXT," +
+                        DBContractPos.PosBarco3.COLUMN_CONX + " TEXT," +
+                        DBContractPos.PosBarco3.COLUMN_CONY + " TEXT," +
+                        DBContractPos.PosBarco3.COLUMN_PUNCON + " TEXT)"
+            )
+        )
+        db.execSQL(
+            String.format(
+                "CREATE TABLE " + DBContractPos.PosBarco4.TABLE_NAME + "(" +
+                        DBContractPos.PosBarco4.COLUMN_JUGX + " TEXT," +
+                        DBContractPos.PosBarco4.COLUMN_JUGY + " TEXT," +
+                        DBContractPos.PosBarco4.COLUMN_PUNJUG + " TEXT," +
+                        DBContractPos.PosBarco4.COLUMN_CONX + " TEXT," +
+                        DBContractPos.PosBarco4.COLUMN_CONY + " TEXT," +
+                        DBContractPos.PosBarco4.COLUMN_PUNCON + " TEXT)"
+            )
+        )
+        db.execSQL(
+            String.format(
+                "CREATE TABLE " + DBContractPos.PosBarco5.TABLE_NAME + "(" +
+                        DBContractPos.PosBarco5.COLUMN_JUGX + " TEXT," +
+                        DBContractPos.PosBarco5.COLUMN_JUGY + " TEXT," +
+                        DBContractPos.PosBarco5.COLUMN_PUNJUG + " TEXT," +
+                        DBContractPos.PosBarco5.COLUMN_CONX + " TEXT," +
+                        DBContractPos.PosBarco5.COLUMN_CONY + " TEXT," +
+                        DBContractPos.PosBarco5.COLUMN_PUNCON + " TEXT)"
+            )
+        )
+
+        db.execSQL(
+            String.format(
+                "CREATE TABLE " + DBContractPos.puntosJug.TABLE_NAME + "(" +
+                        DBContractPos.puntosJug.COLUMN_PUNTO + " TEXT)"
+            )
+        )
+
+        db.execSQL(
+            String.format(
+                "CREATE TABLE " + DBContractPos.puntosCon.TABLE_NAME + "(" +
+                        DBContractPos.puntosCon.COLUMN_PUNTO + " TEXT)"
+            )
+        )
+
+        db.execSQL(
+            String.format(
+                "CREATE TABLE " + DBContractPos.toqueJugador.TABLE_NAME + "(" +
+                        DBContractPos.toqueJugador.COLUMN_TOQUEX + " TEXT," +
+                        DBContractPos.toqueJugador.COLUMN_TOQUEY + " TEXT)"
+            )
+        )
+
+        db.execSQL(
+            String.format(
+                "CREATE TABLE " + DBContractPos.toqueConsola.TABLE_NAME + "(" +
+                        DBContractPos.toqueConsola.COLUMN_TOQUEX + " TEXT," +
+                        DBContractPos.toqueConsola.COLUMN_TOQUEY + " TEXT)"
+            )
+        )
+    }
+
+    fun borrarToques(){
+        val db = writableDatabase
+        db.execSQL(String.format("DELETE FROM " + DBContractPos.toqueJugador.TABLE_NAME + ""))
+        db.execSQL(String.format("DELETE FROM " + DBContractPos.toqueConsola.TABLE_NAME + ""))
     }
 
     override fun onDowngrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -161,12 +289,34 @@ null,DATABASE_VERSION) {
     }
 
     @Throws(SQLiteConstraintException::class)
+    fun insertPuntoJugador(punto: String): Boolean {
+        val db = writableDatabase
+        // Creamos un ContentValues, para asignar los valores a insertar
+        val values = ContentValues()
+
+        values.put(DBContractPos.puntosJug.COLUMN_PUNTO, punto)
+        val newRowId = db.insert(DBContractPos.puntosJug.TABLE_NAME, null, values)
+        return true
+    }
+
+    @Throws(SQLiteConstraintException::class)
+    fun insertPuntoConsola(punto: String): Boolean {
+        val db = writableDatabase
+        // Creamos un ContentValues, para asignar los valores a insertar
+        val values = ContentValues()
+
+        values.put(DBContractPos.puntosCon.COLUMN_PUNTO, punto)
+        val newRowId = db.insert(DBContractPos.puntosCon.TABLE_NAME, null, values)
+        return true
+    }
+
+
+    @Throws(SQLiteConstraintException::class)
     fun updateJug(jugX: String, jugY: String, noBarco: Int): Boolean {
         //Obtenemos la base de datos para escribir
         val db = writableDatabase
         // Creamos el query para buscar llave a modificar
         val registro = ContentValues()
-
 
         try {
             when (noBarco) {
@@ -179,6 +329,7 @@ null,DATABASE_VERSION) {
                         DBContractPos.PosBarco1.TABLE_NAME, registro,
                         null, null
                     )
+                    db.close()
                 }
                 2 -> {
                     registro.put(DBContractPos.PosBarco2.COLUMN_JUGX, jugX)
@@ -189,6 +340,7 @@ null,DATABASE_VERSION) {
                         DBContractPos.PosBarco2.TABLE_NAME, registro,
                         null, null
                     )
+                    db.close()
                 }
                 3 -> {
                     registro.put(DBContractPos.PosBarco3.COLUMN_JUGX, jugX)
@@ -199,6 +351,7 @@ null,DATABASE_VERSION) {
                         DBContractPos.PosBarco3.TABLE_NAME, registro,
                         null, null
                     )
+                    db.close()
                 }
                 4 -> {
                     registro.put(DBContractPos.PosBarco4.COLUMN_JUGX, jugX)
@@ -209,6 +362,7 @@ null,DATABASE_VERSION) {
                         DBContractPos.PosBarco4.TABLE_NAME, registro,
                         null, null
                     )
+                    db.close()
                 }
                 5 -> {
                     registro.put(DBContractPos.PosBarco5.COLUMN_JUGX, jugX)
@@ -219,6 +373,7 @@ null,DATABASE_VERSION) {
                         DBContractPos.PosBarco5.TABLE_NAME, registro,
                         null, null
                     )
+                    db.close()
                 }
             }
         } catch (e: SQLiteException) {
@@ -228,6 +383,45 @@ null,DATABASE_VERSION) {
         }
         return true
     }
+
+    @Throws(SQLiteConstraintException::class)
+    fun updatePuntosJugador(puntos: String): Boolean {
+        //Obtenemos la base de datos para escribir
+        val db = writableDatabase
+        // Creamos el query para buscar llave a modificar
+        val registro = ContentValues()
+
+        registro.put(DBContractPos.puntosJug.COLUMN_PUNTO, puntos)
+
+        // Modificamos el registro
+        db.update(
+            DBContractPos.puntosJug.TABLE_NAME, registro,
+            null, null
+        )
+        return true
+    }
+
+    @Throws(SQLiteConstraintException::class)
+    fun updatePuntosConsola(puntos: String) {
+        //Obtenemos la base de datos para escribir
+        val db = writableDatabase
+        // Creamos el query para buscar llave a modificar
+        val registro = ContentValues()
+
+        //println("bd:" + puntos)
+        registro.put(DBContractPos.puntosCon.COLUMN_PUNTO, puntos)
+
+        // Modificamos el registro
+        try {
+            db.update(
+                DBContractPos.puntosCon.TABLE_NAME, registro,
+                null, null
+            )
+        } catch (e: Exception) {
+            println(e)
+        }
+    }
+
 
     @Throws(SQLiteConstraintException::class)
     fun updateCon(conX: String, conY: String, noBarco: Int): Boolean {
@@ -245,6 +439,7 @@ null,DATABASE_VERSION) {
                     DBContractPos.PosBarco1.TABLE_NAME, registro,
                     null, null
                 )
+                db.close()
             }
             2 -> {
                 registro.put(DBContractPos.PosBarco2.COLUMN_CONX, conX)
@@ -255,6 +450,7 @@ null,DATABASE_VERSION) {
                     DBContractPos.PosBarco2.TABLE_NAME, registro,
                     null, null
                 )
+                db.close()
             }
             3 -> {
                 registro.put(DBContractPos.PosBarco3.COLUMN_CONX, conX)
@@ -265,6 +461,7 @@ null,DATABASE_VERSION) {
                     DBContractPos.PosBarco3.TABLE_NAME, registro,
                     null, null
                 )
+                db.close()
             }
             4 -> {
                 registro.put(DBContractPos.PosBarco4.COLUMN_CONX, conX)
@@ -275,6 +472,8 @@ null,DATABASE_VERSION) {
                     DBContractPos.PosBarco4.TABLE_NAME, registro,
                     null, null
                 )
+                db.close()
+               // println("${conX} + ${conY}")
             }
             5 -> {
                 registro.put(DBContractPos.PosBarco5.COLUMN_CONX, conX)
@@ -285,6 +484,7 @@ null,DATABASE_VERSION) {
                     DBContractPos.PosBarco5.TABLE_NAME, registro,
                     null, null
                 )
+                db.close()
             }
         }
         return true
@@ -521,17 +721,21 @@ null,DATABASE_VERSION) {
                     DBContractPos.PosBarco2.TABLE_NAME, null
         )
         listaPos.add(añadirVista(cursor, 2))
+
         cursor = null
         cursor = db.rawQuery(
             "select * from " +
                     DBContractPos.PosBarco3.TABLE_NAME, null
         )
         listaPos.add(añadirVista(cursor, 3))
+
+        cursor = null
         cursor = db.rawQuery(
             "select * from " +
                     DBContractPos.PosBarco4.TABLE_NAME, null
         )
         listaPos.add(añadirVista(cursor, 4))
+        cursor = null
         cursor = db.rawQuery(
             "select * from " +
                     DBContractPos.PosBarco5.TABLE_NAME, null
@@ -680,11 +884,130 @@ null,DATABASE_VERSION) {
         return pos1
     }
 
+    @SuppressLint("Range")
+    fun obtenerPuntosJugador(): String {
+        val db = writableDatabase
+        var cursor: Cursor? = null
+        var dato: String = ""
+
+        cursor = db.rawQuery(
+            "select * from " +
+                    DBContractPos.puntosJug.TABLE_NAME, null
+        )
+
+        with(cursor) {
+            while (cursor?.moveToNext() == true) {
+                dato =
+                    this?.getLong(getColumnIndexOrThrow(DBContractPos.puntosJug.COLUMN_PUNTO))
+                        .toString()
+            }
+        }
+        return dato
+    }
+
+    @SuppressLint("Range")
+    fun obtenerPuntosConsola(): String {
+        val db = writableDatabase
+        var cursor: Cursor? = null
+        var dato: String = ""
+
+        cursor = db.rawQuery(
+            "select * from " +
+                    DBContractPos.puntosCon.TABLE_NAME, null
+        )
+
+        with(cursor) {
+            while (cursor?.moveToNext() == true) {
+                dato =
+                    this?.getLong(getColumnIndexOrThrow(DBContractPos.puntosCon.COLUMN_PUNTO))
+                        .toString()
+            }
+        }
+        return dato
+    }
+
+    @Throws(SQLiteConstraintException::class)
+    fun insertToqueJugador(toques: PosToques) {
+        val db = writableDatabase
+        // Creamos un ContentValues, para asignar los valores a insertar
+        val values = ContentValues()
+
+        values.put(DBContractPos.toqueJugador.COLUMN_TOQUEX, toques.toqX)
+        values.put(DBContractPos.toqueJugador.COLUMN_TOQUEY, toques.toqY)
+        val newRowId = db.insert(DBContractPos.toqueJugador.TABLE_NAME, null, values)
+    }
+
+
+    @SuppressLint("Range")
+    fun obtenerToquesJugador():MutableList<PosToques>{
+        val db = writableDatabase
+        var cursor: Cursor? = null
+        var lista= mutableListOf<PosToques>()
+
+        cursor = db.rawQuery(
+            "select * from " +
+                    DBContractPos.toqueJugador.TABLE_NAME, null
+        )
+
+        var x:String
+        var y: String
+        with(cursor) {
+            while (moveToNext()) {
+                x =
+                    this?.getLong(getColumnIndexOrThrow(DBContractPos.toqueJugador.COLUMN_TOQUEX)).toString()
+                y = this?.getLong(getColumnIndexOrThrow(DBContractPos.toqueJugador.COLUMN_TOQUEY)).toString()
+                var toque = PosToques(x,y)
+                lista.add(toque)
+            }
+        }
+        return lista
+    }
+
+
+    @Throws(SQLiteConstraintException::class)
+    fun insertToqueConsola(toques: PosToques) {
+        val db = writableDatabase
+        // Creamos un ContentValues, para asignar los valores a insertar
+        val values = ContentValues()
+
+        values.put(DBContractPos.toqueConsola.COLUMN_TOQUEX, toques.toqX)
+        values.put(DBContractPos.toqueConsola.COLUMN_TOQUEY, toques.toqY)
+        val newRowId = db.insert(DBContractPos.toqueConsola.TABLE_NAME, null, values)
+
+        println("Insertando toque")
+    }
+
+    @SuppressLint("Range")
+    fun obtenerToquesConsola():MutableList<PosToques>{
+        val db = writableDatabase
+        var cursor: Cursor? = null
+        var lista= mutableListOf<PosToques>()
+
+        cursor = db.rawQuery(
+            "select * from " +
+                    DBContractPos.toqueConsola.TABLE_NAME, null
+        )
+
+        var x:String
+        var y: String
+        println("Obteniendo datos")
+        with(cursor) {
+            while (moveToNext()) {
+                x =
+                    this?.getLong(getColumnIndexOrThrow(DBContractPos.toqueConsola.COLUMN_TOQUEX)).toString()
+                y = this?.getLong(getColumnIndexOrThrow(DBContractPos.toqueConsola.COLUMN_TOQUEY)).toString()
+                var toque = PosToques(x,y)
+                lista.add(toque)
+            }
+        }
+        return lista
+    }
+
     companion object {
         // En caso de modificar la estructura de la BD, incrementar la version en 1.
         //val DATABASE_VERSION = 4
 
-        val DATABASE_VERSION = 16
+        val DATABASE_VERSION = 23
         val DATABASE_NAME = "poss.db"
     }
 }

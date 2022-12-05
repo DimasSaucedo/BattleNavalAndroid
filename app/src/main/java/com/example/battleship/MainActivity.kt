@@ -15,6 +15,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var usersDBHelper : PosDBHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        //setTheme(R.t)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -22,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         val btnAjustes: Button= findViewById(R.id.btn_ajustes)
 
         usersDBHelper = PosDBHelper(this)
+        //usersDBHelper.crearTablas()
 
 //        var buttonLinea = findViewById<Button>(R.id.buttonEntrar)
 //        var Nombre = findViewById<EditText>(R.id.ButtonName)
@@ -51,6 +54,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         usersDBHelper.deleteUser()
+        //usersDBHelper.borrarTablas()
 
         super.onDestroy()
     }

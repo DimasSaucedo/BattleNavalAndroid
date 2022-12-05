@@ -10,37 +10,43 @@ import androidx.core.view.GestureDetectorCompat
 
 
 class DibujarTablero1: View,GestureDetector.OnGestureListener,
-GestureDetector.OnDoubleTapListener{
+GestureDetector.OnDoubleTapListener {
 
-//    class DibujarTablero1(context: Context): View(context),GestureDetector.OnGestureListener,
+    //    class DibujarTablero1(context: Context): View(context),GestureDetector.OnGestureListener,
 //        GestureDetector.OnDoubleTapListener{
-    constructor(ctx: Context):super(ctx){
+    constructor(ctx: Context) : super(ctx) {
     }
 
-    constructor(ctx: Context,attrs:AttributeSet):super(ctx,attrs){}
+    constructor(ctx: Context, attrs: AttributeSet) : super(ctx, attrs) {}
 
-    constructor(ctx: Context,attrs: AttributeSet,defStyleAttr: Int): super(ctx,attrs,defStyleAttr){
+    constructor(ctx: Context, attrs: AttributeSet, defStyleAttr: Int) : super(
+        ctx,
+        attrs,
+        defStyleAttr
+    ) {
 
     }
 
-    val paint = Paint ()
+    val paint = Paint()
+    val paintRectangulo = Paint()
     val paintText = Paint()
 
     private lateinit var mDetector: GestureDetectorCompat
 
-    var x = 0
-    var y = 0
+    var xdt = 0f
+    var ydt = 0f
 
     //Pociciones pa los barcos
     var objbarcoArray = arrayOf<ObjectDrag>(
-        ObjectDrag(this.context,40f,202f, R.drawable.barc1,1),
-        ObjectDrag(this.context,200f,202f, R.drawable.barc2,2),
-        ObjectDrag(this.context,500f,202f, R.drawable.barc3,3),
-        ObjectDrag(this.context,40f,306f, R.drawable.barc4,4),
-        ObjectDrag(this.context,500f,306f, R.drawable.barc5,5))
+        ObjectDrag(this.context, 40f, 202f, R.drawable.barc1, 1),
+        ObjectDrag(this.context, 200f, 202f, R.drawable.barc2, 2),
+        ObjectDrag(this.context, 500f, 202f, R.drawable.barc3, 3),
+        ObjectDrag(this.context, 40f, 306f, R.drawable.barc4, 4),
+        ObjectDrag(this.context, 500f, 306f, R.drawable.barc5, 5)
+    )
 
-    init{
-        mDetector = GestureDetectorCompat(this.context,this)
+    init {
+        mDetector = GestureDetectorCompat(this.context, this)
         mDetector.setOnDoubleTapListener(this)
     }
 
@@ -60,51 +66,52 @@ GestureDetector.OnDoubleTapListener{
         canvas.drawBitmap(ddc, null, Rect(0, 0, ancho, 170), paint)
 
         //Dibujando Rectangulo
-        paint.style = Paint.Style.STROKE
-        paint.strokeWidth = 8f;
-        canvas.drawRect(Rect(20, 200, ancho - 20, 500), paint)
+        paintRectangulo.style = Paint.Style.STROKE
+        paintRectangulo.strokeWidth = 8f;
+        paintRectangulo.color = Color.argb(255, 0, 112, 192)
+        canvas.drawRect(Rect(20, 200, ancho - 20, 500), paintRectangulo)
+        //Dibujar tablero
+        var tablero = BitmapFactory.decodeResource(resources, R.drawable.tablero_jug) //1060*1060
+        canvas.drawBitmap(tablero, null, Rect(9, 600, 1050, 1700), paint)
 
         //Dibujando barcos
         paintText.style = Paint.Style.FILL
         paintText.strokeWidth = 2f
         paintText.textSize = 25f
 
-        for (i in objbarcoArray.indices){
+        for (i in objbarcoArray.indices) {
             objbarcoArray.get(i).draw(canvas)
         }
-
-        canvas.drawText("$x, $y",5f,alto -20f,paintText)
-
-        //Dibujar tablero
-        var tablero = BitmapFactory.decodeResource(resources,R.drawable.tablero) //1060*1060
-        canvas.drawBitmap(tablero,null,Rect(20,600,ancho-20,1660),paint)
-
-        invalidate()
+        //invalidate()
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
-            x = event.x.toInt()
-            y = event.y.toInt()
+        xdt = event.x
+        ydt = event.y
 
-        when(event.action){
-            MotionEvent.ACTION_DOWN->{
-                for(i in objbarcoArray.indices) {
-                    if (objbarcoArray.get(i).isTouched(event.x, event.y) && !objbarcoArray.get(i).getActionDown())
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+                for (i in objbarcoArray.indices) {
+                    if (objbarcoArray.get(i).isTouched(event.x, event.y) && !objbarcoArray.get(i)
+                            .getActionDown()
+                    )
                         objbarcoArray.get(i).setActionDown(true)
                 }
             }
-            MotionEvent.ACTION_MOVE ->{
-                for(i in objbarcoArray.indices) {
+            MotionEvent.ACTION_MOVE -> {
+                for (i in objbarcoArray.indices) {
                     if (objbarcoArray.get(i).getActionDown()) {
                         objbarcoArray.get(i).setPosition(event.x, event.y)
                     }
                 }
             }
             MotionEvent.ACTION_UP -> {
-                for(i in objbarcoArray.indices) {
+                for (i in objbarcoArray.indices) {
                     if (objbarcoArray.get(i).getActionDown()) {
-                        objbarcoArray.get(i).asignarPocicionFinal(event.x,event.y)
+                        objbarcoArray.get(i).asignarPocicionFinal(event.x, event.y)
                         objbarcoArray.get(i).setActionDown(false)
+                        xdt = 0f
+                        ydt = 0f
                     }
                 }
             }
@@ -118,7 +125,7 @@ GestureDetector.OnDoubleTapListener{
     }
 
     override fun onDown(p0: MotionEvent?): Boolean {
-       return true
+        return true
     }
 
     override fun onShowPress(p0: MotionEvent?) {
@@ -158,6 +165,6 @@ GestureDetector.OnDoubleTapListener{
         val ancho = 1080
         val alto = 1700
 
-        setMeasuredDimension(ancho,alto)
+        setMeasuredDimension(ancho, alto)
     }
 }

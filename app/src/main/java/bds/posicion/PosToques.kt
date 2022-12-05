@@ -1,4 +1,4 @@
 package bds.posicion
 
-class PosToques {
+class PosToques (var toqX: String,var toqY:String){
 }
