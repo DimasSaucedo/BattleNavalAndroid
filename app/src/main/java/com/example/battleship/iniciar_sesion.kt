@@ -51,7 +51,7 @@ class iniciar_sesion : AppCompatActivity() {
                 pas = it.pass
             }
             if ((res != null) && (pwdI.text.toString() == pas)) {
-                val intent = Intent(this, DibujarTablero1::class.java)
+                val intent = Intent(this, crea_tablero::class.java)
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "Contraseña Incorrecta", Toast.LENGTH_LONG).show()

@@ -26,6 +26,8 @@ class registro : AppCompatActivity() {
         txtPass= findViewById(R.id.pwdReg)
         txtAge = findViewById(R.id.ageReg)
 
+        usersDBHelper = UserDBHelper(this)
+
     }
 
     //creamos una funcion para mandar los datos

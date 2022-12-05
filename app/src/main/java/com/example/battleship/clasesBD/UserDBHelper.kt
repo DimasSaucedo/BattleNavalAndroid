@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteConstraintException
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
-import com.example.battleship.clasesBD.DBContract.UserEntry.Companion.TABLE_NAME
 
 import java.util.ArrayList
 
@@ -16,13 +15,19 @@ class UserDBHelper (context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
     null, DATABASE_VERSION){
 
     override fun onCreate(db: SQLiteDatabase) {
-        db.execSQL("create table if not exists $TABLE_NAME(COLUMN_NAME TEXT, " +
-                "COLUMN_PWD TEXT,COLUMN_AGE INTEGER)")
+        db.execSQL(SQL_CREATE_ENTRIES)
+        val values = ContentValues()
+        values.put(DBContract.UserEntry.COLUMN_NAME, "admin")
+        values.put(DBContract.UserEntry.COLUMN_PWD, "123")
+        values.put(DBContract.UserEntry.COLUMN_AGE, "22")
+//        val newRowId = db.insert(DBContract.UserEntry.TABLE_NAME, null, values)
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         // En caso de actualizar la version de BD elimina lo anterior, para iniciar otra
-        db.execSQL(SQL_CREATE_ENTRIES)
+        //db.execSQL(SQL_CREATE_ENTRIES)
+        db.execSQL(String.format("DROP TABLE IF EXISTS " + DBContract.UserEntry.TABLE_NAME + ""))
         onCreate(db)
     }
 
@@ -80,15 +85,11 @@ class UserDBHelper (context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         val users = ArrayList<UserModel>()
         val db = writableDatabase
         var cursor: Cursor? = null
-        try {
+
             cursor = db.rawQuery("select * from " + DBContract.UserEntry.TABLE_NAME
                     + " WHERE " + DBContract.UserEntry.COLUMN_NAME + "='"
                     + name + "'", null)
-        } catch (e: SQLiteException) {
-            // si la BBD no esta creada, la creamos
-            db.execSQL(SQL_CREATE_ENTRIES)
-            return ArrayList()
-        }
+
 
         var name: String
         var pass: String
@@ -137,22 +138,19 @@ class UserDBHelper (context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
 
     fun buscar(name: String): Boolean {
 
-        var encontrado :Boolean= false
+        var encontrado = false
         val db = writableDatabase
         var cursor: Cursor? = null
-        try {
-            cursor = db.rawQuery("select * from " + DBContract.UserEntry.TABLE_NAME
-                    + " WHERE " + DBContract.UserEntry.COLUMN_NAME + "='"
-                    + name + "'", null)
-        } catch (e: SQLiteException) {
-            // si la BBD no esta creada, la creamos
-            db.execSQL(SQL_CREATE_ENTRIES)
-//            return ArrayList()
-        }
 
-        if (cursor!= null) {
-            encontrado=true
-           return encontrado
+        cursor = db.rawQuery("select * from " + DBContract.UserEntry.TABLE_NAME
+                + " WHERE " + DBContract.UserEntry.COLUMN_NAME + " = '"
+                + name + "'", null)
+
+        with(cursor) {
+            while (cursor?.moveToNext() == true) {
+                encontrado=true
+                return encontrado
+            }
         }
         return encontrado
     }
@@ -160,7 +158,7 @@ class UserDBHelper (context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
     companion object {
         // En caso de modificar la estructura de la BD, incrementar la version en 1.
         val DATABASE_VERSION = 1
-        val DATABASE_NAME = "FeedReader.db"
+        val DATABASE_NAME = "Usuarios.db"
 
         private val SQL_CREATE_ENTRIES =
             "CREATE TABLE " + DBContract.UserEntry.TABLE_NAME + " (" +
